@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+require('dotenv').config()
 
 type ConnectionObject ={
     isConnected?: number
@@ -20,7 +21,6 @@ async function dbConnect() {
             // useFindAndModify: false,
             // useCreateIndex: true,
         });
-        console.log(db)
 
         connection.isConnected = db.connections[0].readyState;
         console.log("Connected to DB");

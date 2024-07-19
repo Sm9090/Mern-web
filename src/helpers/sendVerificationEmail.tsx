@@ -11,6 +11,7 @@ export async function sendVerificationEmail(email:string,username: string, verif
             subject: "FeedBack message | Verification Code",
             react: verifyMethod,
         });
+        console.log("Email sent", response);
         return {
             success: true,
             message: "Verification email sent",
