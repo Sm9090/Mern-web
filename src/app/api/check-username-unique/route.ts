@@ -48,7 +48,7 @@ export async function GET(request: Request) {
     return Response.json(
         {
           success: true,
-          message: "Username is Available",
+          message: `${username} is Available`,
         },
         {
           status: 200,
