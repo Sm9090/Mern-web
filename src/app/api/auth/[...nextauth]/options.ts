@@ -11,7 +11,7 @@ export const authOptions : NextAuthOptions = {
       name: "Credentials",
       credentials: {
         email: { label: "Email", type: "text" },
-        username: { label: "Username", type: "text" },
+        // username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req): Promise<any> {
@@ -20,7 +20,7 @@ export const authOptions : NextAuthOptions = {
           const user = await UserModel.findOne({
             $or: [
               { email: credentials?.email },
-              { username: credentials?.username },
+              // { username: credentials?.username },
             ],
           });
           if (!user) {
@@ -41,7 +41,7 @@ export const authOptions : NextAuthOptions = {
             throw new Error("Password is incorrect");
           }
         } catch (err: any) {
-          console.log(err);
+          console.log(err , "error");
           throw new Error(err);
         }
       },

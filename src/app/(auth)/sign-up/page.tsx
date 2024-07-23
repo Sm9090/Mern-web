@@ -106,7 +106,7 @@ function page() {
           <Form {...register}>
             <form
               onSubmit={register.handleSubmit(onSubmit)}
-              className="space-y-8"
+              className="space-y-6"
             >
               <FormField
                 control={register.control}
