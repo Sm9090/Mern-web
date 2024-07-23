@@ -1,31 +1,23 @@
 "use client";
-import React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { useDebounceCallback } from "usehooks-ts";
-import { useToast } from "@/components/ui/use-toast";
-import { useRouter } from "next/navigation";
-import { signUpSchema } from "@/schemas/signUpSchema";
-import axios, { AxiosError } from "axios";
-import { set } from "mongoose";
-import { ApiResponse } from "@/types/ApiResponse";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 import signInSchema from "@/schemas/signInSchema";
-import { Sign } from "crypto";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
 import { signIn } from "next-auth/react";
-import { Young_Serif } from "next/font/google";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 function page() {
   const [loader, setLoader] = React.useState(false);
